@@ -26,7 +26,7 @@ def crear_app():
             app.db.entradas.insert_one(parametros)
         return render_template('index.html', entradas=entradas)
     return app
-
+app = crear_app()
 if __name__ == '__main__':
-    app = crear_app()
+   
     app.run()
