@@ -1,0 +1,7 @@
+flask
+
+ptyhon-dotenv
+
+pymongo[srv]
+
+guinicorn

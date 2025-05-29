@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Blog Personal</title>
+</head>
+<body>
+    <header class="nav">
+        <div class="logo_navbar"><img src="../static/logo.png" alt="logo">Blog Personal</div>
+        <nav>
+            <ul class="nav_bar">
+                <li class="nav_barItem"><a href="#" class="link_nav">Home</a></li>
+                <li class="nav_barItem"><a href="#" class="link_nav">About</a></li>
+                <li class="nav_barItem"><a href="#" class="link_nav">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Agregar una nueva entrada</h2>
+            <form class="form" method="post">
+                <p class="form_input"> 
+                    <label for="title" class="form_label">Título:</label>
+                    <input type="text" id="title" name="title" class="Título">
+                </p>
+                <p class="form_input"> 
+                    <label for="content" class="form_label">Contenido:</label>
+                    <textarea id="content" name="content" class="Contenido"></textarea>
+                </p>
+                <button type="submit" class="form_button">Publicar</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Entradas Recientes</h2>
+            <article class="entry">
+                <div>
+                    <h3 class="entry_title">
+                        Dia Para aprender a programar
+                    </h3>
+                    <time datetime="2025-01-01" class="entry_date">*28-05-2025</time>
+                    <p class="entry_content">Hoy aprendi a programar en flask</p>
+                </div>
+            </article>
+            {% for entrada in entradas %}
+            <article class="entry">
+             <div>
+                    <h3 class="entry_title">
+                        {{ entrada.titulo }}
+                    </h3>
+                    <time datetime={{entrada.fecha}} class="entry_date">*{{entrada.fecha}}</time>
+                    <p class="entry_content">{{entrada.contenido}}</p>
+                </div>
+              </article>
+            {% endfor %}
+                
+        </section>
+
+
+    </main>
+    <footer>
+        <p>Blog Personal</p>
+    
+        <p>&copy; 2025 Blog Personal. All rights reserved.</p>
+    </footer>
+</body>
+</html>
